@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Layout Clone</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <title>Webjunto Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* General styles */
+    /* ========== Global Styles ========== */
     body {
       margin: 0;
-      font-family: "Open Sans", sans-serif;
-      background-color: #F5F7FA;
-      color: #333;
+      font-family: "Lato", sans-serif;
+      background-color: #f5f5f7;
+      color: #13124F;
     }
 
     .container {
@@ -21,144 +21,249 @@
       margin: 0 auto;
     }
 
-    /* Header */
+    a { text-decoration: none; }
+
+    /* ========== Header Section ========== */
     header {
-      background-color: #4A90E2;
-      padding: 15px 0;
+      background: linear-gradient(135deg, #1B1B6C, #352BA5);
       color: white;
+      padding: 15px 0;
     }
 
     .header-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 1.5em;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.4em;
+      letter-spacing: 1px;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 25px;
       margin: 0;
       padding: 0;
+      gap: 20px;
     }
 
     nav a {
       color: white;
-      text-decoration: none;
       font-weight: 600;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #2AD392;
     }
 
-    /* Hero section */
+    /* ========== Hero Section ========== */
     .hero {
-      background-color: white;
-      padding: 80px 0;
+      background: linear-gradient(135deg, #13124F, #352BA5);
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
     }
 
-    .hero-container {
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: #F61067;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background-color: #d00e5c;
+    }
+
+    /* ========== Main Content ========== */
+    main {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 40px;
+      justify-content: space-between;
+      margin-top: 40px;
+      flex-wrap: wrap;
     }
 
-    .hero-text {
-      flex: 1;
+    .content {
+      flex: 2;
+      min-width: 300px;
     }
 
-    .hero-text h1 {
-      color: #4A90E2;
-      font-size: 2.2em;
-      margin-bottom: 20px;
+    .content h2 {
+      font-weight: 700;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
 
-    .hero-text p {
-      font-size: 1em;
+    .content p {
+      color: #333;
       line-height: 1.6;
       margin-bottom: 25px;
     }
 
-    .hero-text button {
-      background-color: #D0021B;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1em;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .hero-text button:hover {
-      background-color: #b00117;
-    }
-
-    .hero-image img {
+    .video iframe {
       width: 100%;
-      max-width: 450px;
+      height: 315px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    /* ========== Sidebar ========== */
+    aside {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .messages, .welcome, .vote {
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      background: #f8f8fb;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
 
-    /* Video section */
-    .video {
+    .messages {
+      background-color: #F61067;
+      color: white;
       text-align: center;
-      padding: 60px 0;
-      background: #F0F2F5;
+      font-weight: bold;
     }
 
-    .video h2 {
-      color: #4A90E2;
-      margin-bottom: 25px;
+    .messages span {
+      background-color: white;
+      color: #F61067;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      margin-left: 5px;
     }
 
-    .video-wrapper iframe {
-      width: 80%;
-      max-width: 700px;
-      height: 400px;
+    .welcome {
+      background: #1B1B6C;
+      color: white;
+    }
+
+    .welcome h3 {
+      margin-top: 0;
+      color: #2AD392;
+    }
+
+    .welcome input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    .welcome button {
+      width: 100%;
+      background-color: #F61067;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .vote {
+      background-color: white;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .vote h4 {
+      color: #13124F;
+    }
+
+    .vote-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .vote-buttons button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid #9090A5;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .vote-buttons .cool {
+      background-color: #2AD392;
+      color: white;
       border: none;
     }
 
-    /* Footer */
-    footer {
-      background-color: #4A90E2;
+    .vote-buttons .lame:hover {
+      background-color: #9090A5;
       color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
     }
 
-    /* Responsive Design */
+    /* ========== Alert ========== */
+    .alert {
+      background-color: #9090A5;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 4px;
+      margin-top: 25px;
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      background-color: #13124F;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    /* ========== Responsive ========== */
     @media (max-width: 768px) {
-      .hero-container {
+      main {
         flex-direction: column;
-        text-align: center;
       }
 
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .video-wrapper iframe {
-        width: 100%;
-        height: 250px;
+      .hero h1 {
+        font-size: 2.2em;
       }
     }
 
     @media (max-width: 480px) {
-      .hero-text h1 {
-        font-size: 1.6em;
+      .hero {
+        padding: 60px 10px;
       }
 
-      .hero-text p {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .hero p {
         font-size: 0.95em;
       }
     }
@@ -169,48 +274,70 @@
   <!-- Header -->
   <header>
     <div class="container header-container">
-      <div class="logo">MyBrand</div>
+      <div class="logo">Webjunto®</div>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Projects</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="container hero-container">
-      <div class="hero-text">
-        <h1>We Build Beautiful Websites</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis a libero tincidunt varius.</p>
-        <button>Learn More</button>
-      </div>
-      <div class="hero-image">
-        <img src="https://via.placeholder.com/450x300" alt="Example Image">
-      </div>
-    </div>
+    <h1>Hello, world!</h1>
+    <p>Welcome to Bootstrap v3.3.7. Check out this awesome jumbotron!</p>
+    <button>LEARN MORE</button>
   </section>
 
-  <!-- Video Section -->
-  <section class="video">
-    <div class="container">
-      <h2>Watch Our Story</h2>
-      <div class="video-wrapper">
-        <iframe width="560" height="315" src="<iframe width="560" height="315" src="https://www.youtube.com/embed/acfYQmCBsz8?si=NWdeEml6GSLalyXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
-        title="YouTube video" frameborder="0" allowfullscreen></iframe>
+  <!-- Main Content -->
+  <div class="container">
+    <main>
+      <div class="content">
+        <h2>Heading goes here</h2>
+        <p>
+          Cupcake ipsum dolor sit amet caramels halvah soufflé sugar plum. Fruitcake lollipop tiramisu pastry halvah sweet lemon drops. Jelly beans marshmallow jujubes. Pudding macaroon chocolate cake chupa chups.
+        </p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/acfYQmCBsz8?si=NWdeEml6GSLalyXG" allowfullscreen></iframe>
+        </div>
+
+        <div class="alert">
+          ⚠️ Whoa! This is a super important alert!
+        </div>
       </div>
-    </div>
-  </section>
+
+      <aside>
+        <div class="messages">
+          ✉️ MESSAGES <span>3</span>
+        </div>
+
+        <div class="welcome">
+          <h3>Welcome Candidate!</h3>
+          <p>You are a Starfleet Academy candidate. Greet the Captain in a respectful fashion.</p>
+          <input type="text" placeholder="Input your greeting.">
+          <button>SEND</button>
+          <small>I don’t watch Star Trek and don’t get this reference</small>
+        </div>
+
+        <div class="vote">
+          <h4>Cast your vote!</h4>
+          <p>What do you think about space?</p>
+          <div class="vote-buttons">
+            <button class="cool">COOL</button>
+            <button class="lame">LAME</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>© 2025 MyBrand. All rights reserved.</p>
-    </div>
+    2017 All Rights Reserved, SomeCompany.
   </footer>
 
 </body>
